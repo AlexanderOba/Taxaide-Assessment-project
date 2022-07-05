@@ -1,0 +1,75 @@
+nav{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    align-items: center;
+}
+.logo{
+    width: 60%;
+}
+
+  .navlist li .navlinks {
+    text-decoration: none;
+    color: inherit;
+}
+
+.navlinks{
+    cursor: pointer;
+}
+
+.button{
+    display: inline-block;
+    border-radius: 7px;
+    padding: 5px 26px;
+    background-color: #fff;
+    color: #0675c1;
+    transition: all 0.5s ease;
+}
+.button:hover{
+    color:#fff;
+    background-color: #0675c1;
+}
+.burger{
+    display: none;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width:1024px){
+    .navlist{
+        width: 60%;
+    }
+    .proj-assignment{
+        width: 97%;
+    }
+    .special-skills{
+        width: 77%;
+    }
+}  
+@media screen and (max-width:760px){
+    body{
+      overflow-x: hidden;
+  
+  }
+  
+ nav{
+  display: flex;
+  position: fixed;
+  background: #fff;
+  justify-content: space-between;
+  align-items: baseline;
+  min-height: 9vh;
+  z-index: 12;
+  width: 100%;
+  padding: 20px 15px 0px 15px;
+ }
+ .distance{
+  display: block;
+ }
+ .button:hover{
+    color:#0675c1;
+    background-color: #fff;
+ }
+}
+

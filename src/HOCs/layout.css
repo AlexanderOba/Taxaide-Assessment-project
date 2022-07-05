@@ -1,0 +1,33 @@
+ @font-face {
+    font-family: "Cera Pro";
+    src: local("Cera ProBold"),
+      url("../cerapro/CeraProBold.otf") format("truetype");
+  }
+  @font-face {
+    font-family: "Cera ProMedium";
+    src: local("Cera Pro Medium"),
+      url("../cerapro/Cera Pro Medium.otf") format("truetype");
+  }  
+  @font-face {
+    font-family: "Cera Prolight";
+    src: local("Cera Pro Light"),
+      url("../cerapro/Cera Pro Light.otf") format("truetype");
+  }  
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Cera Pro';
+     scroll-behavior: smooth;
+  }
+a:link, a:visited {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
