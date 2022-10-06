@@ -6,10 +6,12 @@ const Ul = styled.ul`
     list-style: none;
     display:flex;
     justify-content: space-around;
-    width: 25%;
-    color: #000;
-    font-size: 14px;
+    width: 42%;
+    font-size: 16px;
+    font-weight:600;
     align-items:  baseline;
+    margin-bottom: 2px;
+    color: #ECF1F0;
     
     li a{
         list-style: none;
@@ -38,9 +40,10 @@ const Ul = styled.ul`
 const Navlist = ({ open }) => {
   return (
     <Ul open={open}>
-      <li className="navlinks">The App</li>
       <li className="navlinks">About Us</li>
-      <li className="navlinks">Get in Touch</li>
+      <li className="navlinks">Contact</li>
+      <li className="navlinks loginlink">Login</li>
+      <li className="navlinks sgupbtn">Create free account</li>
     </Ul>
   );
 };

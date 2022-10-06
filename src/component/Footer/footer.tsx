@@ -1,72 +1,38 @@
-import React,{ useEffect } from 'react';
-import { Container, Row, Col} from 'react-bootstrap';
+import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
 import './footer.css';
 import { Link } from 'react-router-dom';
-import AOS from 'aos';
-import "aos/dist/aos.css";
+import logo from "../../images/tpay_logo.png";
+import twit from "../../images/twit.png";
+import facebook from "../../images/facebook.png";
+import insta from "../../images/insta.png";
 
-const Footer = ()=>{
 
-    useEffect( () => {
 
-        AOS.init({
-           duration:1500,
-        });
-        AOS.refresh();
-      }, []);
-
-    return(
-        <div className="section-6">
-            <Container>
-                <div data-aos='fade-up'>
-                  <Row>
-                    <Col md={4}>
-                    <div className="footer-content">
-                       <h2 className="footer-header">Toptutors</h2>
-                       <p>Toptutors.com is one of Nigeria's most trusted leading online platform for tutors & students. It 
-                    helps student/parents to find verified & skilled tutors in-person </p>
-                    </div>
-                    </Col>
-                    <Col md={3}>
-                      <div className="footer-content">
-                         <h2 className="footer-header">Useful Links</h2>
-                         <ul className="footer-list">
-                             <li><Link to="/">Terms & Conditions</Link></li>
-                             <li><Link to="/">Become a Tutor</Link></li>
-                             <li><Link to="/">Hire a Tutor</Link></li>
-                             <li><Link to="/">FAQs</Link></li>
-                         </ul>
-                      </div>
-                    </Col>
-                    <Col md={3}>
-                    <div className="footer-content">
-                         <h2 className="footer-header">Connect</h2>
-                         <ul className="footer-list">
-                             <li><Link to="/"><i className="logo-social fa fa-facebook"/> Facebook</Link></li>
-                             <li><Link to="/"><i className="logo-social fa fa-youtube-play"/>Youtube</Link></li>
-                             <li><Link to="/"><i className="logo-social fa fa-linkedin"/>Linkedin</Link></li>
-                             <li><Link to="/"><i className="logo-social fa fa-instagram"/>Instagram</Link></li>
-                         </ul>
-                      </div>   
-                    </Col>
-                    <Col md={2}>
-                      <div className="footer-content">
-                         <h2 className="footer-header">Office Address</h2>
-                         <p>5 Temitayo Ayodeji street,<br/>graceland Estate <br/> Isheri Lagos. </p>
-                      </div>
-                    </Col>
-                 </Row>
-                 <Row>
-                    <Col md={12}>
-                        <div  className="copyright-section">
-                          <p>Copyright &copy; 2021. Toptutors.com All rights reserved</p>
-                        </div>
-                    </Col>
-                 </Row>
-              </div>
-            </Container>
-
+const Footer = () => {
+  return (
+    <Row className="section-6">
+      <div className='footcol1'>
+        <img src={logo} alt="logo" className='footerlogo' />
+        <div className='socialmdwrap'>
+          <img src={insta} alt="logo" className='socialmdimg' />
+          <img src={facebook} alt="logo" className='socialmdimg' />
+          <img src={twit} alt="logo" />
         </div>
-    )   
+        <p>2015-2022 Taxaide Technologies Limited. All rights reserved</p>
+      </div>
+      <div className='footcol2'>
+        <h5>About Us</h5>
+        <p>About</p>
+        <p>Legal & privacy</p>
+      </div>
+      <div className='footcol2'>
+        <h5>Products</h5>
+        <p>TBook®</p>
+        <p>TaxiTWithhold®</p>
+        <p>TaxiTPayroll®</p>
+      </div>
+    </Row>
+  )
 }
 export default Footer;

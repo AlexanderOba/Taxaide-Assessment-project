@@ -1,152 +1,242 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './home.css';
 import { Container, Row, Col } from 'react-bootstrap';
 import Header from '../Header/header';
 import AOS from 'aos';
 import "aos/dist/aos.css";
-import section1img from "../../images/section1img.png"
-import section2img from "../../images/section2img.png"
-import step1img from "../../images/step1img.png";
-import step2img from "../../images/step2img.png";
-import step3img from "../../images/step3img.png";
-import car from "../../images/car.png";
-import time from "../../images/time.png";
-import sheild from "../../images/sheild.png";
-import control from "../../images/control.png"
+import section1img from "../../images/fairlady.png"
+import sponsors from "../../images/sponsors.png"
+import apple from "../../images/apple.png"
+import right_panel from "../../images/right_panel.png";
+import money_transfer from "../../images/money_transfer.png";
+import left_panel from "../../images/left_panel.png";
+import googleplay from "../../images/googleplay.png";
+import time from "../../images/EMI.png";
+import sheild from "../../images/Security.png";
+import control from "../../images/Money.png"
+import { NavLink } from 'react-router-dom';
+import Burger from '../Header/burger';
+import logo from "../../images/tpay_logo.png";
+import Footer from '../Footer/footer';
+
 
 const Home = () => {
+   const [state, setState] = useState({
+      pay_bills: true,
+      buy_airtime: false,
+      transfer: false,
+      toll: false
+   })
+   const {
+      pay_bills,
+      buy_airtime,
+      transfer,
+      toll
+   } = state
 
+   const switchTab = (a: string) => {
+      if (a === "pay_bills") {
+         setState({
+            ...state,
+            pay_bills: true,
+            buy_airtime: false,
+            transfer: false,
+            toll: false,
+         })
+      }
+      if (a === "buy_airtime") {
+         setState({
+            ...state,
+            pay_bills: false,
+            buy_airtime: true,
+            transfer: false,
+            toll: false
+         })
+      }
+      if (a === "transfer") {
+         setState({
+            ...state,
+            pay_bills: false,
+            buy_airtime: false,
+            transfer: true,
+            toll: false
+         })
+      }
+      if (a === "toll") {
+         setState({
+            ...state,
+            pay_bills: false,
+            buy_airtime: false,
+            transfer: false,
+            toll: true
+         })
+      }
+   }
    useEffect(() => {
-
       AOS.init({
          duration: 1500,
       });
       AOS.refresh();
    }, []);
-
    return (
       <>
-         <Header />
+         <nav>
+            <div className="logo">
+               <img src={logo} alt="logo" />
+               <NavLink to="/" activeClassName="activelink">
+                  <div className="logolinks">For Individuals</div>
+               </NavLink>
+               <NavLink to="/business" activeClassName="activelink">
+                  <div className="logolinks">For Businesses</div>
+               </NavLink>
+            </div>
+            <Burger />
+         </nav>
          <Container fluid>
-            <div className='section1'>
+            <Row className='section1'>
                <div className='section1_col1'>
-                  <h4>Compare & book ride-hailing providers </h4>
+                  <h4>Secure & seamless online transactions</h4>
                   <p data-aos='fade-down'>
-                     Save money and time with WhichrRide.
-                     Think Compare the market but for taxis.
+                     Providing you with the best online payment experience
                   </p>
+                  <span className='sgupbtn'>Create free account</span>
                </div>
                <div className='section1_col2'>
-                  <img src={section1img} data-aos='zoom-in-up' className='section1img'/>
+                  <img src={section1img} data-aos='zoom-in-up' className='img-fluid section1img' />
                </div>
-            </div>
+            </Row>
             <Row className='section2'>
-               <Col md={6}>
-                  <h2 className='section2_header'>Whichride brings together multiple ride hailing providers and local taxi firms in one app</h2>
-                  <p className='section2_para' data-aos='fade-down'>
-                     Allowing riders to select the provider that offers the best price,
-                     service or travel time, then seamlessly book within the app
+               <Col md={7}>
+                  <h2 className='section2_header'>Payments tools designed for you</h2>
+                  <p className='section2_para'>
+                     Explore payment features that provides you with every possible solution
                   </p>
                </Col>
-               <Col md={8}>
-                  <Row>
-                     <Col md={6}>
-                        <img src={section2img} data-aos='zoom-in-up' className='section1img'/>
-                     </Col>
-                     <Col md={6} className="section2col2wrap">
-                        <div className='_stepswrap' data-aos='fade-right'>
-                           <span><img src={step1img} /></span>
-                           <div className='_stepswrapcontent'>
-                              <h6>Enter location</h6>
-                              <p>Enter your destination to see a list of taxi providers near you.</p>
-                           </div>
-                        </div>
-                        <div className='_stepswrap' data-aos='fade-right'>
-                           <span><img src={step2img} /></span>
-                           <div className='_stepswrapcontent'>
-                              <h6>Find the perfect ride</h6>
-                              <p>Filter results by driver rating, driver sex, waiting times,
-                                 price or speed. Reduce carbon footprint by only showing hybrid or electric cars.
-                              </p>
-                           </div>
-                        </div>
-                        <div className='_stepswrap' data-aos='fade-right'>
-                           <span><img src={step3img} /></span>
-                           <div className='_stepswrapcontent'>
-                              <h6>Pay and Save</h6>
-                              <p>Once you select a ride, we search the web for coupons to get you an even better deal,
-                                 then book seemlessly within our app and earn points while you ride.
-                              </p>
-                           </div>
-                        </div>
-                     </Col>
-                  </Row>
-               </Col>
+               <div className='section2contentwrap'>
+                  <div className='section2content'>
+                     <img src={control} data-aos='flip-left' />
+                     <div className='choicescontent'>
+                        <h6>User Friendly</h6>
+                        <p>
+                           Highly responsive and easy to navigate
+                        </p>
+                     </div>
+                  </div>
+                  <div className='section2content'>
+                     <img src={sheild} data-aos='flip-left' />
+                     <div className='choicescontent' >
+                        <h6>Secure</h6>
+                        <p>
+                           Your data is secure. It is continuously monitored, audited, and stored in an encrypted form.
+                        </p>
+                     </div>
+                  </div>
+                  <div className='section2content'>
+                     <img src={time} data-aos='flip-left' />
+                     <div className='choicescontent'>
+                        <h6>Fast</h6>
+                        <p>
+                           Transacting takes only a few seconds - it's convenient and safe.
+                        </p>
+                     </div>
+                  </div>
+               </div>
             </Row>
             <Row className='section3'>
-            <span className='section3_heading'>Why Whichride</span>
-               <Col md={6} className="section3_col1">
-                  <div className='_choicewrap'>
-                     <span><img src={car} data-aos='flip-left'/></span>
-                     <div className='choicescontent' data-aos='fade-right'>
-                        <h6>More choices</h6>
-                        <p>WhichRide lets you compare pricing across the major rideshares so you can save money on every ride.
-                        </p>
+               <div className='billpaymentoptionswrap'>
+                  {pay_bills ? (
+                     <div className='billpaymentoptionscontent activepayment'>
+                        <h5>Pay bills</h5>
+                        <p>Paying your bills has never been so easy.</p>
                      </div>
-                     <span><img src={time} data-aos='flip-left'/></span>
-                     <div className='choicescontent' data-aos='fade-right'>
-                        <h6>More choices</h6>
-                        <p>
-                           WhichRide lets you compare pricing across the major rideshares so you can save money on every ride.
-                        </p>
+                  ) : (
+                     <div className='billpaymentoptionscontent' onClick={() => switchTab("pay_bills")}>
+                        <h5>Pay bills</h5>
+                        <p>Paying your bills has never been so easy.</p>
                      </div>
-                  </div>
-               </Col>
-               <Col md={6} className="section3_col2" >
-                  <div className='_choicewrap _choicewrap2'>
-                     <span className='imgspan control' data-aos='flip-left'><img src={control} /></span>
-                     <div className='choicescontent' data-aos='fade-down'>
-                        <h6>More choices</h6>
-                        <p>
-                           WhichRide lets you compare pricing across the major rideshares so you can save money on every ride.
-                        </p>
+                  )}
+                  <div className='billpaymentoptionsgap'></div>
+                  {buy_airtime ? (
+                     <div className='billpaymentoptionscontent activepayment'>
+                        <h5>Buy Airtime & Data</h5>
+                        <p>Never get caught with low airtime and data again!</p>
                      </div>
-                     <span className='imgspan sheildspan' data-aos='flip-left'><img src={sheild} /></span>
-                     <div className='choicescontent' data-aos='fade-down'>
-                        <h6>Safety first</h6>
-                        <p>
-                           WhichRide lets you compare pricing across the major rideshares so you can save money on every ride.
-                        </p>
+                  ) : (
+                     <div className='billpaymentoptionscontent' onClick={() => switchTab("buy_airtime")}>
+                        <h5>Buy Airtime & Data</h5>
+                        <p>Never get caught with low airtime and data again!</p>
                      </div>
-                  </div>
-               </Col>
-            </Row>
-            <Row className='section4'>
-               <Col md={5}>
-                  <form className='sctn4form'>
-                     <h3>Sign up to our beta form</h3>
-                     <p>
-                        Sign up to our mailing list to find out more
-                        information and keep up to date about our activities
-                     </p>
-                     <div>
-                        <div className='inptwrap'>
-                           <input type="text" placeholder="email" size={2} className='form-control inpt' />
-                        </div>
-                        <span className='frmbtn'>Subscribe</span>
+                  )}
+                  <div className='billpaymentoptionsgap'></div>
+                  {transfer ? (
+                     <div className='billpaymentoptionscontent activepayment'>
+                        <h5>Money Transfer</h5>
+                        <p>Transferring money is now hassle-free.</p>
                      </div>
-                  </form>
-               </Col>
-            </Row>
-            <Row className='section5'>
-               <div className='rightsdiv'>
-                  © 2020 Whichride - All rights reserved.
+                  ) : (
+                     <div className='billpaymentoptionscontent' onClick={() => switchTab("transfer")}>
+                        <h5>Money Transfer</h5>
+                        <p>Transferring money is now hassle-free.</p>
+                     </div>
+                  )}
+                  <div className='billpaymentoptionsgap'></div>
+                  {toll ? (
+                     <div className='billpaymentoptionscontent activepayment'>
+                        <h5>Pay Toll Fee</h5>
+                        <p>Never worry about getting a toll ticket again.</p>
+                     </div>
+                  ) : (
+                     <div className='billpaymentoptionscontent' onClick={() => switchTab("toll")}>
+                        <h5>Pay Toll Fee</h5>
+                        <p>Never worry about getting a toll ticket again.</p>
+                     </div>
+                  )}
                </div>
-               <div>
-                  <span className='policyspan'>Privacy Policy</span>   
+               <div className='section3col2'>
+                  {pay_bills && (
+                     <img src={right_panel} className='img-fluid' />
+                  )}
+                  {transfer && (
+                     <img src={right_panel} className='img-fluid' />
+                  )}
+                  {buy_airtime && (
+                     <img src={money_transfer} className='img-fluid' />
+                  )}
+                  {toll && (
+                     <img src={money_transfer} className='img-fluid' />
+                  )}
                </div>
-               <div> Terms and Conditions</div>
             </Row>
+            <Row className="section4">
+               <div className='section4col1'>
+                  <img src={left_panel} className="img-fluid" />
+               </div>
+               <div className='section4col2'>
+                  <h5>Transact on the go</h5>
+                  <p>Stay on top of your business with our easy-to-use app</p>
+                  <span className='sgupbtn secn4btn'>Get Started</span>
+                  <div>
+                     <span>
+                        <img src={googleplay} className="img-fluid" style={{ marginRight: "10px" }} />
+                     </span>
+                     <span>
+                        <img src={apple} className="img-fluid" />
+                     </span>
+                  </div>
+               </div>
+            </Row>
+            <Row className="section5">
+               <div className='section5col1'>
+                  <h5>
+                     Send funds Remit taxes Buy utilities
+                  </h5>
+                  <span className='sgupbtn secn5btn'>Get Started</span>
+               </div>
+               <div className='section5col2'>
+                  <img src={sponsors} className="img-fluid" />
+               </div>
+            </Row>
+           <Footer/>
          </Container>
       </>
    )

@@ -1,75 +1,97 @@
-nav{
-    display: flex;
-    justify-content: space-around;
-    padding-top: 30px;
-    padding-bottom: 10px;
-    align-items: center;
-}
-.logo{
-    width: 60%;
-}
-
-  .navlist li .navlinks {
-    text-decoration: none;
-    color: inherit;
-}
-
-.navlinks{
-    cursor: pointer;
-}
-
-.button{
-    display: inline-block;
-    border-radius: 7px;
-    padding: 5px 26px;
-    background-color: #fff;
-    color: #0675c1;
-    transition: all 0.5s ease;
-}
-.button:hover{
-    color:#fff;
-    background-color: #0675c1;
-}
-.burger{
-    display: none;
-    cursor: pointer;
-}
-
-
-@media screen and (max-width:1024px){
-    .navlist{
-        width: 60%;
-    }
-    .proj-assignment{
-        width: 97%;
-    }
-    .special-skills{
-        width: 77%;
-    }
-}  
-@media screen and (max-width:760px){
-    body{
-      overflow-x: hidden;
-  
-  }
-  
- nav{
+nav {
   display: flex;
-  position: fixed;
-  background: #fff;
   justify-content: space-between;
-  align-items: baseline;
-  min-height: 9vh;
-  z-index: 12;
-  width: 100%;
-  padding: 20px 15px 0px 15px;
- }
- .distance{
-  display: block;
- }
- .button:hover{
-    color:#0675c1;
-    background-color: #fff;
- }
+  padding-top: 30px;
+  padding: 15px 36px;
+  align-items: center;
+  background-color: #060809;
+  color: #ECF1F0;
+  font-size: 16px;
+  font-weight: 600;
+}
+.logo {
+  display: flex;
+  width: 37%;
+  align-items: center;
+  justify-content: space-between;
+}
+.activelink{
+    display: inline-block;
+    border-bottom: 5px solid  rgba(39, 235, 120, 0.527);
+    padding: 0px 15px;
+}
+.navlist li .navlinks {
+  text-decoration: none;
+  color: inherit;
+}
+.logolinks{
+    line-height: 37px;
+}
+.navlinks {
+  cursor: pointer;
+}
+.sgupbtn{
+    display: inline-block;
+    background: linear-gradient(150.58deg, rgba(92, 178, 58, 0.8) 0%, rgba(4, 128, 2, 0.8) 100%);
+    border-radius: 10px;
+    padding: 13px 26px;
+    color: #fff;
+    font-weight: 600;
 }
 
+.loginlink {
+  border-left: 2px solid #fff;
+  padding: 2px 0px 2px 28px;
+}
+.button {
+  display: inline-block;
+  border-radius: 7px;
+  padding: 5px 26px;
+  background-color: #fff;
+  color: #0675c1;
+  transition: all 0.5s ease;
+}
+.button:hover {
+  color: #fff;
+  background-color: #0675c1;
+}
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
+  .navlist {
+    width: 60%;
+  }
+  .proj-assignment {
+    width: 97%;
+  }
+  .special-skills {
+    width: 77%;
+  }
+}
+@media screen and (max-width: 760px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  nav {
+    display: flex;
+    position: fixed;
+    background: #fff;
+    justify-content: space-between;
+    align-items: baseline;
+    min-height: 9vh;
+    z-index: 12;
+    width: 100%;
+    padding: 20px 15px 0px 15px;
+  }
+  .distance {
+    display: block;
+  }
+  .button:hover {
+    color: #0675c1;
+    background-color: #fff;
+  }
+}
