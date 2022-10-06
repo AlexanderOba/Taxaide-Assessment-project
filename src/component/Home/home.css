@@ -208,3 +208,46 @@
   padding: 13px 58px !important;
   cursor: pointer;
 }
+.businesssection1 {
+  display: flex;
+  padding: 0px 70px;
+  background-color: #060809;
+  justify-content: center;
+  background-image: url(../../images/circle.png);
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-position-y: bottom;
+}
+.businesspgcol>h4{
+  font-size: 44px;
+  font-weight: 600;
+  line-height: 53px;
+  color: #232c35;
+  margin-bottom: 28px;
+  color: #fff;
+}
+.businesspgcol>p{
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  color: #fff;
+  width: 83%;
+  margin: auto;
+}
+.businesspgcol {
+  text-align: center;
+  width: 56%;
+  padding: 118px 0px 191px;
+}
+.bsnessbtn{
+  margin-top: 3rem;
+}
+.businscnimgwrap{
+  text-align: center;
+  margin-top: -138px;
+  padding-bottom: 100px;
+}
+.businscnimgwrap>div{
+  width: 80%;
+  margin: auto;
+}

@@ -1,24 +1,74 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './home.css';
 import { Container, Row, Col } from 'react-bootstrap';
-import Header from '../Header/header';
+import right_panel from "../../images/right_panel.png";
+import money_transfer from "../../images/money_transfer.png";
+import sponsors from "../../images/sponsors.png"
+import time from "../../images/EMI.png";
+import sheild from "../../images/Security.png";
+import control from "../../images/Money.png"
+import { NavLink } from 'react-router-dom';
 import AOS from 'aos';
 import "aos/dist/aos.css";
-import section1img from "../../images/fairlady.png"
-import section2img from "../../images/section2img.png"
-import step1img from "../../images/step1img.png";
-import step2img from "../../images/step2img.png";
-import step3img from "../../images/step3img.png";
-import car from "../../images/car.png";
-import time from "../../images/time.png";
-import sheild from "../../images/sheild.png";
-import control from "../../images/control.png";
-import { NavLink } from 'react-router-dom';
+import people from "../../images/people.png";
 import Burger from '../Header/burger';
 import logo from "../../images/tpay_logo.png";
 import "../Header/header.css";
+import Footer from '../Footer/footer';
+
 
 const Business = () => {
+   const [state, setState] = useState({
+      pay_bills: true,
+      buy_airtime: false,
+      transfer: false,
+      toll: false
+   })
+   const {
+      pay_bills,
+      buy_airtime,
+      transfer,
+      toll
+   } = state
+
+   const switchTab = (a: string) => {
+      if (a === "pay_bills") {
+         setState({
+            ...state,
+            pay_bills: true,
+            buy_airtime: false,
+            transfer: false,
+            toll: false,
+         })
+      }
+      if (a === "buy_airtime") {
+         setState({
+            ...state,
+            pay_bills: false,
+            buy_airtime: true,
+            transfer: false,
+            toll: false
+         })
+      }
+      if (a === "transfer") {
+         setState({
+            ...state,
+            pay_bills: false,
+            buy_airtime: false,
+            transfer: true,
+            toll: false
+         })
+      }
+      if (a === "toll") {
+         setState({
+            ...state,
+            pay_bills: false,
+            buy_airtime: false,
+            transfer: false,
+            toll: true
+         })
+      }
+   }
    useEffect(() => {
       AOS.init({
          duration: 1500,
@@ -41,27 +91,134 @@ const Business = () => {
             <Burger />
          </nav>
          <Container fluid>
-            <Row className='section1'>
-               <div className='section1_col1'>
-                  <h4>Secure & seamless online transactions</h4>
+            <Row className='businesssection1'>
+               <div className='businesspgcol'>
+                  <h4>Manage payroll, compliance & HR in real time</h4>
                   <p data-aos='fade-down'>
-                     Providing you with the best online payment experience
+                     Make income tax remittances to the state internal revenue service for your employees.
                   </p>
-                  <span className='sgupbtn'>Create free account</span>
-               </div>
-               <div className='section1_col2'>
-                  <img src={section1img} data-aos='zoom-in-up' className='img-fluid section1img' />
+                  <span className='sgupbtn  bsnessbtn'>Create free account</span>
                </div>
             </Row>
-            <Row className='section5'>
-               <div className='rightsdiv'>
-                  © 2020 Whichride - All rights reserved.
-               </div>
+            <div className='businscnimgwrap'>
                <div>
-                  <span className='policyspan'>Privacy Policy</span>
+                  <img src={people} className='img-fluid' />
                </div>
-               <div> Terms and Conditions</div>
+            </div>
+            <Row className='section2'>
+               <Col md={7}>
+                  <h2 className='section2_header'>Payments tools designed for you</h2>
+                  <p className='section2_para'>
+                     Explore payment features that provides you with every possible solution
+                  </p>
+               </Col>
+               <div className='section2contentwrap'>
+                  <div className='section2content'>
+                     <img src={control} data-aos='flip-left' />
+                     <div className='choicescontent'>
+                        <h6>User Friendly</h6>
+                        <p>
+                           Highly responsive and easy to navigate
+                        </p>
+                     </div>
+                  </div>
+                  <div className='section2content'>
+                     <img src={sheild} data-aos='flip-left' />
+                     <div className='choicescontent' >
+                        <h6>Secure</h6>
+                        <p>
+                           Your data is secure. It is continuously monitored, audited, and stored in an encrypted form.
+                        </p>
+                     </div>
+                  </div>
+                  <div className='section2content'>
+                     <img src={time} data-aos='flip-left' />
+                     <div className='choicescontent'>
+                        <h6>Fast</h6>
+                        <p>
+                           Transacting takes only a few seconds - it's convenient and safe.
+                        </p>
+                     </div>
+                  </div>
+               </div>
             </Row>
+            <Row className='section3'>
+               <div className='billpaymentoptionswrap'>
+                  {pay_bills ? (
+                     <div className='billpaymentoptionscontent activepayment'>
+                        <h5>Payments</h5>
+                        <p>Paying your bills has never been so easy.</p>
+                     </div>
+                  ) : (
+                     <div className='billpaymentoptionscontent' onClick={() => switchTab("pay_bills")}>
+                        <h5>Payments</h5>
+                        <p>Paying your bills has never been so easy.</p>
+                     </div>
+                  )}
+                  <div className='billpaymentoptionsgap'></div>
+                  {buy_airtime ? (
+                     <div className='billpaymentoptionscontent activepayment'>
+                        <h5>Pay Roll</h5>
+                        <p>Never get caught with low airtime and data again!</p>
+                     </div>
+                  ) : (
+                     <div className='billpaymentoptionscontent' onClick={() => switchTab("buy_airtime")}>
+                        <h5>Pay Roll</h5>
+                        <p>Never get caught with low airtime and data again!</p>
+                     </div>
+                  )}
+                  <div className='billpaymentoptionsgap'></div>
+                  {transfer ? (
+                     <div className='billpaymentoptionscontent activepayment'>
+                        <h5>Pay Slip</h5>
+                        <p>Transferring money is now hassle-free.</p>
+                     </div>
+                  ) : (
+                     <div className='billpaymentoptionscontent' onClick={() => switchTab("transfer")}>
+                        <h5>Pay Slip</h5>
+                        <p>Transferring money is now hassle-free.</p>
+                     </div>
+                  )}
+                  <div className='billpaymentoptionsgap'></div>
+                  {toll ? (
+                     <div className='billpaymentoptionscontent activepayment'>
+                        <h5>Reports</h5>
+                        <p>Never worry about getting a toll ticket again.</p>
+                     </div>
+                  ) : (
+                     <div className='billpaymentoptionscontent' onClick={() => switchTab("toll")}>
+                        <h5>Reports</h5>
+                        <p>Never worry about getting a toll ticket again.</p>
+                     </div>
+                  )}
+               </div>
+               <div className='section3col2'>
+                  {pay_bills && (
+                     <img src={right_panel} className='img-fluid' />
+                  )}
+                  {transfer && (
+                     <img src={right_panel} className='img-fluid' />
+                  )}
+                  {buy_airtime && (
+                     <img src={money_transfer} className='img-fluid' />
+                  )}
+                  {toll && (
+                     <img src={money_transfer} className='img-fluid' />
+                  )}
+               </div>
+            </Row>
+            <Row className="section5">
+               <div className='section5col1'>
+                  <h5>
+                     Send funds Remit taxes Buy utilities
+                  </h5>
+                  <span className='sgupbtn secn5btn'>Get Started</span>
+               </div>
+               <div className='section5col2'>
+                  <img src={sponsors} className="img-fluid" />
+               </div>
+            </Row>
+           <Footer/>
          </Container>
       </>
    )

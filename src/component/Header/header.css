@@ -37,6 +37,7 @@ nav {
     padding: 13px 26px;
     color: #fff;
     font-weight: 600;
+    cursor: pointer;
 }
 
 .loginlink {
