@@ -18,6 +18,7 @@ import { NavLink } from 'react-router-dom';
 import Burger from '../Header/burger';
 import logo from "../../images/tpay_logo.png";
 import Footer from '../Footer/footer';
+import {TextAnimation} from './textanimation';
 
 
 const Home = () => {
@@ -33,7 +34,6 @@ const Home = () => {
       transfer,
       toll
    } = state
-
    const switchTab = (a: string) => {
       if (a === "pay_bills") {
          setState({
@@ -83,22 +83,22 @@ const Home = () => {
          <nav>
             <div className="logo">
                <img src={logo} alt="logo" />
-               <NavLink to="/" activeClassName="activelink">
-                  <div className="logolinks">For Individuals</div>
-               </NavLink>
-               <NavLink to="/business" activeClassName="activelink">
-                  <div className="logolinks">For Businesses</div>
-               </NavLink>
+               <div className="webnavlink">
+                  <NavLink to="/" activeClassName="activelink" >
+                     <div className="logolinks">For Individuals</div>
+                  </NavLink>
+                  <NavLink to="/business" activeClassName="activelink">
+                     <div className="logolinks">For Businesses</div>
+                  </NavLink>
+               </div>
             </div>
-            <Burger />
+            <Burger/>
          </nav>
          <Container fluid>
             <Row className='section1'>
                <div className='section1_col1'>
                   <h4>Secure & seamless online transactions</h4>
-                  <p data-aos='fade-down'>
-                     Providing you with the best online payment experience
-                  </p>
+                  <TextAnimation/>
                   <span className='sgupbtn'>Create free account</span>
                </div>
                <div className='section1_col2'>
@@ -107,7 +107,7 @@ const Home = () => {
             </Row>
             <Row className='section2'>
                <Col md={7}>
-                  <h2 className='section2_header'>Payments tools designed for you</h2>
+                  <h2 className='section2_header' data-aos='fade-down'>Payments tools designed for you</h2>
                   <p className='section2_para'>
                      Explore payment features that provides you with every possible solution
                   </p>
@@ -145,48 +145,48 @@ const Home = () => {
             <Row className='section3'>
                <div className='billpaymentoptionswrap'>
                   {pay_bills ? (
-                     <div className='billpaymentoptionscontent activepayment'>
+                     <div className='billpaymentoptionscontent activepayment' data-aos='fade-right'>
                         <h5>Pay bills</h5>
                         <p>Paying your bills has never been so easy.</p>
                      </div>
                   ) : (
-                     <div className='billpaymentoptionscontent' onClick={() => switchTab("pay_bills")}>
+                     <div className='billpaymentoptionscontent' onClick={() => switchTab("pay_bills")} data-aos='fade-right'>
                         <h5>Pay bills</h5>
                         <p>Paying your bills has never been so easy.</p>
                      </div>
                   )}
                   <div className='billpaymentoptionsgap'></div>
                   {buy_airtime ? (
-                     <div className='billpaymentoptionscontent activepayment'>
+                     <div className='billpaymentoptionscontent activepayment' data-aos='fade-right'>
                         <h5>Buy Airtime & Data</h5>
                         <p>Never get caught with low airtime and data again!</p>
                      </div>
                   ) : (
-                     <div className='billpaymentoptionscontent' onClick={() => switchTab("buy_airtime")}>
+                     <div className='billpaymentoptionscontent' onClick={() => switchTab("buy_airtime")} data-aos='fade-right'>
                         <h5>Buy Airtime & Data</h5>
                         <p>Never get caught with low airtime and data again!</p>
                      </div>
                   )}
                   <div className='billpaymentoptionsgap'></div>
                   {transfer ? (
-                     <div className='billpaymentoptionscontent activepayment'>
+                     <div className='billpaymentoptionscontent activepayment' data-aos='fade-right'>
                         <h5>Money Transfer</h5>
                         <p>Transferring money is now hassle-free.</p>
                      </div>
                   ) : (
-                     <div className='billpaymentoptionscontent' onClick={() => switchTab("transfer")}>
+                     <div className='billpaymentoptionscontent' onClick={() => switchTab("transfer")} data-aos='fade-right'>
                         <h5>Money Transfer</h5>
                         <p>Transferring money is now hassle-free.</p>
                      </div>
                   )}
                   <div className='billpaymentoptionsgap'></div>
                   {toll ? (
-                     <div className='billpaymentoptionscontent activepayment'>
+                     <div className='billpaymentoptionscontent activepayment' data-aos='fade-right'>
                         <h5>Pay Toll Fee</h5>
                         <p>Never worry about getting a toll ticket again.</p>
                      </div>
                   ) : (
-                     <div className='billpaymentoptionscontent' onClick={() => switchTab("toll")}>
+                     <div className='billpaymentoptionscontent' onClick={() => switchTab("toll")} data-aos='fade-right'>
                         <h5>Pay Toll Fee</h5>
                         <p>Never worry about getting a toll ticket again.</p>
                      </div>
@@ -214,7 +214,7 @@ const Home = () => {
                <div className='section4col2'>
                   <h5>Transact on the go</h5>
                   <p>Stay on top of your business with our easy-to-use app</p>
-                  <span className='sgupbtn secn4btn'>Get Started</span>
+                  <span className='sgupbtn secn4btn' data-aos='fade-up'>Get Started</span>
                   <div>
                      <span>
                         <img src={googleplay} className="img-fluid" style={{ marginRight: "10px" }} />
@@ -236,7 +236,7 @@ const Home = () => {
                   <img src={sponsors} className="img-fluid" />
                </div>
             </Row>
-           <Footer/>
+            <Footer />
          </Container>
       </>
    )

@@ -27,6 +27,12 @@ const StyledBurger = styled.div`
     }
     @media screen and (max-width:760px){
         display: block;
+    }
+    @media screen and (max-width:820px){
+     display: block;
+      background-color:  #fff;
+    }
+  
 `;
 
 

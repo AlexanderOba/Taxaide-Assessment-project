@@ -15,6 +15,7 @@ import Burger from '../Header/burger';
 import logo from "../../images/tpay_logo.png";
 import "../Header/header.css";
 import Footer from '../Footer/footer';
+import { TextAnimationBusiness } from './textanimation';
 
 
 const Business = () => {
@@ -81,12 +82,14 @@ const Business = () => {
          <nav>
             <div className="logo">
                <img src={logo} alt="logo" />
-               <NavLink to="/">
-                  <div className="logolinks">For Individuals</div>
-               </NavLink>
-               <NavLink to="/business" activeClassName="activelink">
-                  <div className="logolinks">For Businesses</div>
-               </NavLink>
+               <div className="webnavlink">
+                  <NavLink to="/">
+                     <div className="logolinks">For Individuals</div>
+                  </NavLink>
+                  <NavLink to="/business" activeClassName="activelink">
+                     <div className="logolinks">For Businesses</div>
+                  </NavLink>
+               </div>
             </div>
             <Burger />
          </nav>
@@ -94,9 +97,7 @@ const Business = () => {
             <Row className='businesssection1'>
                <div className='businesspgcol'>
                   <h4>Manage payroll, compliance & HR in real time</h4>
-                  <p data-aos='fade-down'>
-                     Make income tax remittances to the state internal revenue service for your employees.
-                  </p>
+                  <TextAnimationBusiness />
                   <span className='sgupbtn  bsnessbtn'>Create free account</span>
                </div>
             </Row>
@@ -218,7 +219,7 @@ const Business = () => {
                   <img src={sponsors} className="img-fluid" />
                </div>
             </Row>
-           <Footer/>
+            <Footer />
          </Container>
       </>
    )

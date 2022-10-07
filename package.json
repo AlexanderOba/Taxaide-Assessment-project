@@ -28,6 +28,7 @@
     "react-simple-sidenav": "^2.0.0",
     "react-spinners": "^0.11.0",
     "react-time-picker": "^4.5.0",
+    "react-type-animation": "^2.1.1",
     "redux-thunk": "^2.4.1",
     "styled-components": "^5.2.0",
     "typescript": "^4.5.5",
