@@ -101,14 +101,14 @@ const Business = () => {
                   <span className='sgupbtn  bsnessbtn'>Create free account</span>
                </div>
             </Row>
-            <div className='businscnimgwrap'>
-               <div>
+            <div className='businscnimgwrap' >
+               <div data-aos='fade-up'>
                   <img src={people} className='img-fluid' />
                </div>
             </div>
             <Row className='section2'>
                <Col md={7}>
-                  <h2 className='section2_header'>Payments tools designed for you</h2>
+                  <h2 className='section2_header' data-aos='fade-down'>Payments tools designed for you</h2>
                   <p className='section2_para'>
                      Explore payment features that provides you with every possible solution
                   </p>
@@ -146,48 +146,48 @@ const Business = () => {
             <Row className='section3'>
                <div className='billpaymentoptionswrap'>
                   {pay_bills ? (
-                     <div className='billpaymentoptionscontent activepayment'>
+                     <div className='billpaymentoptionscontent activepayment' data-aos='fade-right'>
                         <h5>Payments</h5>
                         <p>Paying your bills has never been so easy.</p>
                      </div>
                   ) : (
-                     <div className='billpaymentoptionscontent' onClick={() => switchTab("pay_bills")}>
+                     <div className='billpaymentoptionscontent' onClick={() => switchTab("pay_bills")} data-aos='fade-right'>
                         <h5>Payments</h5>
                         <p>Paying your bills has never been so easy.</p>
                      </div>
                   )}
                   <div className='billpaymentoptionsgap'></div>
                   {buy_airtime ? (
-                     <div className='billpaymentoptionscontent activepayment'>
+                     <div className='billpaymentoptionscontent activepayment' data-aos='fade-right'>
                         <h5>Pay Roll</h5>
                         <p>Never get caught with low airtime and data again!</p>
                      </div>
                   ) : (
-                     <div className='billpaymentoptionscontent' onClick={() => switchTab("buy_airtime")}>
+                     <div className='billpaymentoptionscontent' onClick={() => switchTab("buy_airtime")} data-aos='fade-right'>
                         <h5>Pay Roll</h5>
                         <p>Never get caught with low airtime and data again!</p>
                      </div>
                   )}
                   <div className='billpaymentoptionsgap'></div>
                   {transfer ? (
-                     <div className='billpaymentoptionscontent activepayment'>
+                     <div className='billpaymentoptionscontent activepayment' data-aos='fade-right'>
                         <h5>Pay Slip</h5>
                         <p>Transferring money is now hassle-free.</p>
                      </div>
                   ) : (
-                     <div className='billpaymentoptionscontent' onClick={() => switchTab("transfer")}>
+                     <div className='billpaymentoptionscontent' onClick={() => switchTab("transfer")} data-aos='fade-right'>
                         <h5>Pay Slip</h5>
                         <p>Transferring money is now hassle-free.</p>
                      </div>
                   )}
                   <div className='billpaymentoptionsgap'></div>
                   {toll ? (
-                     <div className='billpaymentoptionscontent activepayment'>
+                     <div className='billpaymentoptionscontent activepayment' data-aos='fade-right'>
                         <h5>Reports</h5>
                         <p>Never worry about getting a toll ticket again.</p>
                      </div>
                   ) : (
-                     <div className='billpaymentoptionscontent' onClick={() => switchTab("toll")}>
+                     <div className='billpaymentoptionscontent' onClick={() => switchTab("toll")} data-aos='fade-right'>
                         <h5>Reports</h5>
                         <p>Never worry about getting a toll ticket again.</p>
                      </div>
@@ -213,7 +213,7 @@ const Business = () => {
                   <h5>
                      Send funds Remit taxes Buy utilities
                   </h5>
-                  <span className='sgupbtn secn5btn'>Get Started</span>
+                  <span className='sgupbtn secn5btn' data-aos='fade-up'>Get Started</span>
                </div>
                <div className='section5col2'>
                   <img src={sponsors} className="img-fluid" />

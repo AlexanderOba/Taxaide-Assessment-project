@@ -230,7 +230,7 @@ const Home = () => {
                   <h5>
                      Send funds Remit taxes Buy utilities
                   </h5>
-                  <span className='sgupbtn secn5btn'>Get Started</span>
+                  <span className='sgupbtn secn5btn' data-aos='fade-down'>Get Started</span>
                </div>
                <div className='section5col2'>
                   <img src={sponsors} className="img-fluid" />
