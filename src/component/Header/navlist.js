@@ -18,7 +18,7 @@ const Ul = styled.ul`
         text-decoration: none;
     }
 @media screen and (max-width:1024px){
-     width: 60%;
+     width: 32%;
 }
 @media screen and (max-width:760px){
     position: fixed;

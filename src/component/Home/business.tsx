@@ -146,48 +146,48 @@ const Business = () => {
             <Row className='section3'>
                <div className='billpaymentoptionswrap'>
                   {pay_bills ? (
-                     <div className='billpaymentoptionscontent activepayment' data-aos='fade-right'>
+                     <div className='billpaymentoptionscontent activepayment'>
                         <h5>Payments</h5>
                         <p>Paying your bills has never been so easy.</p>
                      </div>
                   ) : (
-                     <div className='billpaymentoptionscontent' onClick={() => switchTab("pay_bills")} data-aos='fade-right'>
+                     <div className='billpaymentoptionscontent' onClick={() => switchTab("pay_bills")}>
                         <h5>Payments</h5>
                         <p>Paying your bills has never been so easy.</p>
                      </div>
                   )}
                   <div className='billpaymentoptionsgap'></div>
                   {buy_airtime ? (
-                     <div className='billpaymentoptionscontent activepayment' data-aos='fade-right'>
+                     <div className='billpaymentoptionscontent activepayment'>
                         <h5>Pay Roll</h5>
                         <p>Never get caught with low airtime and data again!</p>
                      </div>
                   ) : (
-                     <div className='billpaymentoptionscontent' onClick={() => switchTab("buy_airtime")} data-aos='fade-right'>
+                     <div className='billpaymentoptionscontent' onClick={() => switchTab("buy_airtime")}>
                         <h5>Pay Roll</h5>
                         <p>Never get caught with low airtime and data again!</p>
                      </div>
                   )}
                   <div className='billpaymentoptionsgap'></div>
                   {transfer ? (
-                     <div className='billpaymentoptionscontent activepayment' data-aos='fade-right'>
+                     <div className='billpaymentoptionscontent activepayment'>
                         <h5>Pay Slip</h5>
                         <p>Transferring money is now hassle-free.</p>
                      </div>
                   ) : (
-                     <div className='billpaymentoptionscontent' onClick={() => switchTab("transfer")} data-aos='fade-right'>
+                     <div className='billpaymentoptionscontent' onClick={() => switchTab("transfer")}>
                         <h5>Pay Slip</h5>
                         <p>Transferring money is now hassle-free.</p>
                      </div>
                   )}
                   <div className='billpaymentoptionsgap'></div>
                   {toll ? (
-                     <div className='billpaymentoptionscontent activepayment' data-aos='fade-right'>
+                     <div className='billpaymentoptionscontent activepayment'>
                         <h5>Reports</h5>
                         <p>Never worry about getting a toll ticket again.</p>
                      </div>
                   ) : (
-                     <div className='billpaymentoptionscontent' onClick={() => switchTab("toll")} data-aos='fade-right'>
+                     <div className='billpaymentoptionscontent' onClick={() => switchTab("toll")}>
                         <h5>Reports</h5>
                         <p>Never worry about getting a toll ticket again.</p>
                      </div>
