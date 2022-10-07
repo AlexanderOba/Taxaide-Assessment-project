@@ -102,7 +102,7 @@ const Home = () => {
                   <span className='sgupbtn'>Create free account</span>
                </div>
                <div className='section1_col2'>
-                  <img src={section1img} data-aos='zoom-in-up' className='img-fluid section1img' />
+                  <img src={section1img} data-aos='fade-left' className='img-fluid section1img' />
                </div>
             </Row>
             <Row className='section2'>
